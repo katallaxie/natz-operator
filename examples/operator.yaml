@@ -1,0 +1,23 @@
+apiVersion: natz.katallaxie.dev/v1alpha1
+kind: NatsKey
+metadata:
+  name: natsoperator-sample-private-key
+spec:
+  type: Operator
+---
+apiVersion: natz.katallaxie.dev/v1alpha1
+kind: NatsKey
+metadata:
+  name: natsoperator-demo-signing-key
+spec:
+  type: Operator
+---
+apiVersion: natz.katallaxie.dev/v1alpha1
+kind: NatsOperator
+metadata:
+  name: natsoperator-sample
+spec:
+  privateKey:
+    name: natsoperator-sample-private-key
+  signingKeys:
+    - name: natsoperator-demo-signing-key

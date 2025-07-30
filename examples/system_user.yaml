@@ -1,0 +1,22 @@
+apiVersion: natz.katallaxie.dev/v1alpha1
+kind: NatsKey
+metadata:
+  name: natsuser-system-private-key
+spec:
+  type: User
+---
+apiVersion: natz.katallaxie.dev/v1alpha1
+kind: NatsUser
+metadata:
+  name: natsuser-system
+spec:
+  accountRef:
+    name: natsoperator-system
+  privateKey:
+    name: natsuser-system-private-key
+  signerKeyRef:
+    name: natsoperator-system-private-key
+  limits:
+    payload: -1
+    subs: -1
+    data: -1

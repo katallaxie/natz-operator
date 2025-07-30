@@ -1,0 +1,37 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "account-server.fullname" . }}
+rules:
+- resources:
+  - events
+  apiGroups:
+  - ""
+  - events.k8s.io
+  verbs:
+  - create
+  - patch
+  - update
+- apiGroups:
+  - ""
+  - natz.katallaxie.dev
+  resources:
+  - natsaccounts
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "account-server.fullname" . }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "account-server.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "account-server.serviceAccountName" . }}
+  namespace: {{ .Release.Namespace }}
