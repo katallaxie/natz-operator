@@ -11,8 +11,8 @@ require (
 	github.com/nats-io/nkeys v0.4.11
 	github.com/pkg/errors v0.9.1
 	github.com/samber/lo v1.51.0
-	github.com/spf13/cobra v1.9.1
-	github.com/spf13/pflag v1.0.8
+	github.com/spf13/cobra v1.10.1
+	github.com/spf13/pflag v1.0.9
 	github.com/stretchr/testify v1.11.1
 	golang.org/x/mod v0.27.0
 	helm.sh/helm v2.17.0+incompatible
