@@ -256,6 +256,8 @@ Then you can start the operator using the following command.
 make up
 ```
 
+> Create a local Procfile `touch Procfile.local`.
+
 ## License
 
 [Apache 2.0](/LICENSE)
