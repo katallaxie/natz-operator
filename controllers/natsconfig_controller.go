@@ -19,7 +19,7 @@ import (
 	natsv1alpha1 "github.com/katallaxie/natz-operator/api/v1alpha1"
 	"github.com/katallaxie/natz-operator/pkg/status"
 	"github.com/katallaxie/pkg/conv"
-	"github.com/katallaxie/pkg/copy"
+	"github.com/katallaxie/pkg/copyx"
 	"github.com/katallaxie/pkg/slices"
 	"github.com/katallaxie/pkg/utilx"
 )
@@ -29,7 +29,7 @@ const (
 	EventReasonConfigSynchronized      EventReason = "ConfigSynchronized"
 )
 
-// NatsConfigReconciler reconciles a Natsconfig object
+// NatsConfigReconciler reconciles a Natsconfig object.
 type NatsConfigReconciler struct {
 	client.Client
 	Scheme   *runtime.Scheme
@@ -125,7 +125,7 @@ func (r *NatsConfigReconciler) reconcileConfig(ctx context.Context, obj *natsv1a
 	}
 
 	cfg := natsv1alpha1.Config{}
-	err := copy.CopyWithOption(&cfg, obj.Spec.Config, copy.WithIgnoreEmpty())
+	err := copyx.CopyWithOption(&cfg, obj.Spec.Config, copyx.WithIgnoreEmpty())
 	if err != nil {
 		return err
 	}

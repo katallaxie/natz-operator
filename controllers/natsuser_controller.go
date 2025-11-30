@@ -41,7 +41,7 @@ const (
 	EventReasonUserSynchronized          EventReason = "UserSynchronized"
 )
 
-// NatsUserReconciler reconciles a NatsUser object
+// NatsUserReconciler reconciles a NatsUser object.
 type NatsUserReconciler struct {
 	client.Client
 	Scheme   *runtime.Scheme
@@ -154,7 +154,7 @@ func (r *NatsUserReconciler) reconcileCredentials(ctx context.Context, user *nat
 	return nil
 }
 
-// nolint:gocyclo
+//nolint:gocyclo
 func (r *NatsUserReconciler) reconcileUser(ctx context.Context, user *natsv1alpha1.NatsUser) error {
 	sk := &natsv1alpha1.NatsKey{}
 	skName := client.ObjectKey{

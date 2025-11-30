@@ -25,7 +25,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 )
 
-// NatsAccountServer takes NatsAccount and serves them to a nats server (cluster)
+// NatsAccountServer takes NatsAccount and serves them to a nats server (cluster).
 type NatsAccountServer struct {
 	client.Client
 	Scheme   *runtime.Scheme
@@ -81,6 +81,7 @@ func (r *NatsAccountServer) Reconcile(ctx context.Context, req ctrl.Request) (ct
 	return r.ManageSuccess(ctx, account)
 }
 
+//nolint:nestif
 func (r *NatsAccountServer) reconcileDelete(ctx context.Context, obj *natsv1alpha1.NatsAccount) (ctrl.Result, error) {
 	if finalizers.HasFinalizer(obj, natsv1alpha1.FinalizerName) {
 		sk := &natsv1alpha1.NatsKey{}

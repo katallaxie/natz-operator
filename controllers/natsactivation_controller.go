@@ -52,7 +52,8 @@ func NewNatsActivationReconciler(mgr ctrl.Manager) *NatsActivationReconciler {
 //+kubebuilder:rbac:groups=natz.katallaxie.dev,resources=natsactivations/finalizers,verbs=update
 
 // Reconcile ...
-// nolint:gocyclo
+//
+//nolint:gocyclo
 func (r *NatsActivationReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	obj := &natsv1alpha1.NatsActivation{}
 	if err := r.Get(ctx, req.NamespacedName, obj); err != nil {

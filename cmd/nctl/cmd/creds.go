@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"context"
-	"fmt"
+	"log"
 
 	"github.com/katallaxie/natz-operator/api/v1alpha1"
 	"github.com/katallaxie/pkg/conv"
@@ -39,7 +39,7 @@ func runCreds(ctx context.Context) error {
 		return err
 	}
 
-	fmt.Println(conv.String(secret.Data[v1alpha1.SecretUserCredsKey]))
+	log.Println(conv.String(secret.Data[v1alpha1.SecretUserCredsKey]))
 
 	return nil
 }

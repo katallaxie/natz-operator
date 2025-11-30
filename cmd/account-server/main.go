@@ -105,7 +105,7 @@ func run(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	defer nc.Drain()
+	defer nc.Drain() //nolint:errcheck
 	defer nc.Close()
 
 	ac := controllers.NewNatsAccountServer(mgr, nc)
@@ -125,7 +125,7 @@ func run(ctx context.Context) error {
 	}
 
 	setupLog.Info("starting manager")
-	// nolint:contextcheck
+	//nolint:contextcheck
 	err = mgr.Start(ctrl.SetupSignalHandler())
 	if err != nil {
 		return err

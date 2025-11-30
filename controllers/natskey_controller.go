@@ -51,7 +51,8 @@ func NewNatsKeyReconciler(mgr ctrl.Manager) *NatsPrivateKeyReconciler {
 //+kubebuilder:rbac:groups=,resources=secrets,verbs=get;list;watch;create;update;patch;delete
 
 // Reconcile is the main reconciliation loop for the operator.
-// nolint:gocyclo
+//
+//nolint:gocyclo
 func (r *NatsPrivateKeyReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	sk := &natsv1alpha1.NatsKey{}
 	if err := r.Get(ctx, req.NamespacedName, sk); err != nil {
@@ -189,6 +190,7 @@ func (r *NatsPrivateKeyReconciler) reconcileDelete(ctx context.Context, sk *nats
 		return ctrl.Result{}, err
 	}
 
+	//nolint:nestif
 	if sk.Spec.PreventDeletion && secret.ObjectMeta.DeletionTimestamp.IsZero() {
 		if controllerutil.HasControllerReference(secret) {
 			if err := controllerutil.RemoveControllerReference(sk, secret, r.Scheme); err != nil {

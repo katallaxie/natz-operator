@@ -214,7 +214,7 @@ type Block_Object struct{}
 // Block_Array represents an array of a configuration block.
 type Block_Array struct{}
 
-// Block_Include
+// Block_Include ...
 type Block_Include struct{}
 
 // Block_String ...

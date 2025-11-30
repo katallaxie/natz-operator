@@ -9,7 +9,8 @@ import (
 )
 
 // ParseExpiry parses a string into an expiry time.
-// nolint:gocyclo
+//
+//nolint:gocyclo
 func ParseExpiry(s string) (int64, error) {
 	if s == "" || s == "0" {
 		return 0, nil
@@ -49,10 +50,10 @@ func ParseExpiry(s string) (int64, error) {
 
 		switch m[2] {
 		case "m":
-			// nolint:durationcheck
+			//nolint:durationcheck
 			return now.Add(dur * time.Minute).Unix(), nil
 		case "h":
-			// nolint:durationcheck
+			//nolint:durationcheck
 			return now.Add(dur * time.Hour).Unix(), nil
 		case "d":
 			return now.AddDate(0, 0, count).Unix(), nil

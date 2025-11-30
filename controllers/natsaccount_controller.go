@@ -60,7 +60,8 @@ func NewNatsAccountReconciler(mgr ctrl.Manager) *NatsAccountReconciler {
 //+kubebuilder:rbac:groups=natz.katallaxie.dev,resources=natsaccounts/finalizers,verbs=update
 
 // Reconcile ...
-// nolint:gocyclo
+//
+//nolint:gocyclo
 func (r *NatsAccountReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	account := &natsv1alpha1.NatsAccount{}
 	if err := r.Get(ctx, req.NamespacedName, account); err != nil {
@@ -101,7 +102,7 @@ func (r *NatsAccountReconciler) reconcileResources(ctx context.Context, account 
 	return nil
 }
 
-// nolint:gocyclo
+//nolint:gocyclo
 func (r *NatsAccountReconciler) reconcileAccount(ctx context.Context, account *natsv1alpha1.NatsAccount) error {
 	sk := &natsv1alpha1.NatsKey{}
 	skName := client.ObjectKey{

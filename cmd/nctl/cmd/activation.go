@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"context"
-	"fmt"
+	"log"
 
 	natsv1alpha1 "github.com/katallaxie/natz-operator/pkg/client/generated/clientset/internalclientset"
 
@@ -45,7 +45,7 @@ func runGetActivation(ctx context.Context) error {
 		return err
 	}
 
-	fmt.Println(token.Status.JWT)
+	log.Println(token.Status.JWT)
 
 	return nil
 }

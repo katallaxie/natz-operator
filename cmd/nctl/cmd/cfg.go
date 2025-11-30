@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"context"
-	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -50,7 +50,7 @@ func runCfgList(ctx context.Context) error {
 	}
 
 	for _, cfg := range cfgs.Items {
-		fmt.Println(cfg)
+		log.Println(cfg)
 	}
 
 	return nil
