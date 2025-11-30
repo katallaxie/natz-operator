@@ -1,0 +1,45 @@
+apiVersion: v1
+entries:
+  account-server:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-11-30T20:27:55.735037889Z"
+    description: 'A helm chart for the account-server that provides NATS accounting. '
+    digest: d5044bcb842817f094d50befb802844f1587dba42af49834147e103b1c40606d
+    home: https://github.com/katallaxie/natz-operator
+    keywords:
+    - nats
+    - accounting
+    kubeVersion: '>=1.26.0-0'
+    maintainers:
+    - name: Sebastian Doell
+      url: https://github.com/katallaxie
+    name: account-server
+    sources:
+    - https://github.com/katallaxie/natz-operator/tree/main/helm/charts/account-server
+    - https://github.com/katallaxie/natz-operator
+    urls:
+    - https://github.com/katallaxie/natz-operator/releases/download/account-server-0.1.0/account-server-0.1.0.tgz
+    version: 0.1.0
+  natz-operator:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-11-30T20:27:55.872257304Z"
+    description: 'A helm chart for the natz-operator that provides NATS accounting. '
+    digest: a3bf256c873dde83d4fcf2f684dcf0b8607b9c4bcd831a8e5e2c2b90fa42e445
+    home: https://github.com/katallaxie/natz-operator
+    keywords:
+    - nats
+    - accounting
+    kubeVersion: '>=1.26.0-0'
+    maintainers:
+    - name: Sebastian Doell
+      url: https://github.com/katallaxie
+    name: natz-operator
+    sources:
+    - https://github.com/katallaxie/natz-operator/tree/main/helm/charts/natz-operator
+    - https://github.com/katallaxie/natz-operator
+    urls:
+    - https://github.com/katallaxie/natz-operator/releases/download/natz-operator-0.1.0/natz-operator-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-11-30T20:27:55.872262604Z"
