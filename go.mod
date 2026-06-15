@@ -25,7 +25,7 @@ require (
 	github.com/stretchr/testify v1.11.1
 	golang.org/x/mod v0.37.0
 	helm.sh/helm v2.17.0+incompatible
-	k8s.io/api v0.36.1
+	k8s.io/api v0.36.2
 	k8s.io/apimachinery v0.36.2
 	k8s.io/client-go v0.36.1
 	sigs.k8s.io/controller-runtime v0.24.1
