@@ -17,7 +17,7 @@ require (
 	github.com/katallaxie/pkg v0.7.11
 	github.com/nats-io/jwt/v2 v2.8.2
 	github.com/nats-io/nats.go v1.55.0
-	github.com/nats-io/nkeys v0.4.16
+	github.com/nats-io/nkeys v0.4.17
 	github.com/pkg/errors v0.9.1
 	github.com/samber/lo v1.53.0
 	github.com/spf13/cobra v1.10.2
